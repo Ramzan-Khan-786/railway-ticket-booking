@@ -1,0 +1,16 @@
+# See https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+BasedOnStyle: Google        # Base style (Google, LLVM, Microsoft, etc.)
+IndentWidth: 4              # 4 spaces for indentation
+TabWidth: 4
+UseTab: Never               # Always use spaces, not tabs
+BreakBeforeBraces: Allman   # Keep opening brace on a new line
+AllowShortIfStatementsOnASingleLine: false
+ColumnLimit: 100
+AlignAfterOpenBracket: Align
+IndentCaseLabels: true
+ReflowComments: true
+SortIncludes: true
+IncludeBlocks: Regroup
+PointerAlignment: Left
+SpacesInAngles: false
