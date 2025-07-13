@@ -1,0 +1,45 @@
+# --- Build & Binary Files ---
+build/
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.lib
+
+# --- CMake ---
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# --- VS Code Settings ---
+.vscode/
+*.code-workspace
+
+# --- Logs & Debug ---
+*.log
+*.dbg
+*.dSYM/
+*.pdb
+
+# --- OS-specific ---
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# --- LLVM / Clang ---
+.clang-format
+clang-format.exe
+
+# --- Miscellaneous ---
+*.swp
+*.tmp
+*.bak
+*.old
