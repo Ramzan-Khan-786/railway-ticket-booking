@@ -43,3 +43,8 @@ clang-format.exe
 *.tmp
 *.bak
 *.old
+# --- MAIN ---
+tickets.dat
+trains.dat
+users.dat
+railway_system.exe
