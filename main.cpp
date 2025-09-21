@@ -12,7 +12,7 @@ void adminMenu() {
         cout << "\n\t\t\t\t        Admin Menu";
         cout << "\n\t\t\t=============================================";
         cout << "\n\t\t\t1. Add New Train";
-        cout << "\n\t\t\t2. View All Bookings";
+        cout << "\n\t\t\t2. View All Bookings"  ;
         cout << "\n\t\t\t0. Logout";
         cout << "\n\n\t\t\tEnter your choice: ";
         cin >> choice;
