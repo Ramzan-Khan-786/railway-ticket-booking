@@ -1,4 +1,4 @@
-# --- Build & Binary Files ---
+    # --- Build & Binary Files ---
 build/
 *.exe
 *.out
@@ -35,14 +35,15 @@ Thumbs.db
 desktop.ini
 
 # --- LLVM / Clang ---
+# Keep the project's formatting rules in the repository
 !.clang-format
-clang-format.exe
 
 # --- Miscellaneous ---
 *.swp
 *.tmp
 *.bak
 *.old
-# --- MAIN ---
-.dat
-.exe
+# MAIN
+tickets.dat
+trains.dat
+users.dat
