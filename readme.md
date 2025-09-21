@@ -1,113 +1,132 @@
 # Railway Ticket Reservation System 🚂
 
-A console-based application written in C++ that simulates a simple railway ticket booking system. This project demonstrates core Object-Oriented Programming (OOP) principles, file handling for data persistence, and a modular code structure.
+A **console-based application** written in **C++** that simulates a simple railway ticket booking system.  
+This project demonstrates **Object-Oriented Programming (OOP) principles**, **file handling for data persistence**, and a **modular code structure**.
 
 ---
 
-## ## Features ✨
+## ✨ Features
 
-The system is divided into two main modules with distinct functionalities:
+The system is divided into two primary modules with distinct functionalities:
 
-### ### User Features
-* **User Registration & Login:** Securely create a new user account and log in.
-* **Search Trains:** Search for available trains between a specified source and destination.
-* **Book Tickets:** Book a ticket on an available train, which generates a unique PNR number.
-* **View My Bookings:** View a list of all tickets booked by the logged-in user.
-* **Cancel Ticket:** Cancel a previously booked ticket using its PNR number.
+### 👤 User Features
+- **User Registration & Login:** Securely create a new user account and log in.
+- **Search Trains:** Search for available trains between a specified source and destination.
+- **Book Tickets:** Book a ticket on an available train, generating a unique **PNR number**.
+- **View My Bookings:** View all tickets booked by the logged-in user.
+- **Cancel Ticket:** Cancel a previously booked ticket using its PNR number.
 
-### ### Admin Features
-* **Admin Login:** Access a separate admin panel with a unique password.
-* **Add New Trains:** Add new train routes to the system, including train number, name, source, destination, and total seats.
-* **View All Bookings:** Monitor and view a complete list of all tickets booked across all users.
-
----
-
-## ## Getting Started ⚙️
-
-Follow these instructions to get a copy of the project up and running on your local machine.
-
-### ### Prerequisites
-
-You need a C++ compiler installed on your system. The most common one is **g++**, which is part of the MinGW toolchain on Windows.
-* A C++ Compiler (like g++)
-* A command-line terminal (like Command Prompt or PowerShell)
-* Git (for cloning the repository)
-
-### ### Installation & Setup
-
-1.  **Clone the Repository**
-    Open your terminal and clone the repository to your local machine. (Replace the URL with your actual repository URL if you have one).
-    ```sh
-    git clone [https://github.com/your-username/railway-system.git](https://github.com/your-username/railway-system.git)
-    ```
-
-2.  **Navigate to the Project Directory**
-    ```sh
-    cd railway-system
-    ```
-
-3.  **Compile the Source Code**
-    Use the `g++` compiler to compile all the `.cpp` files into a single executable file.
-    ```sh
-    g++ main.cpp User.cpp Train.cpp Ticket.cpp -o railway_system.exe
-    ```
-
-4.  **Run the Application**
-    Once compiled successfully, run the executable file to start the program.
-    ```sh
-    railway_system.exe
-    ```
+### 👨‍💼 Admin Features
+- **Admin Login:** Access a separate admin panel with secure credentials.
+- **Add New Trains:** Add new train routes to the system (train number, name, source, destination, and total seats).
+- **View All Bookings:** Monitor and view all tickets booked across all users.
 
 ---
 
-## ## Usage Guide & Example Walkthrough 🚀
+## ⚙️ Getting Started
 
-Here’s a step-by-step example of how to use the application from start to finish.
+Follow these instructions to get the project running on your local machine.
 
-### ### Step 1: Admin - Add a Train
+### 📋 Prerequisites
+You need a **C++ compiler** installed on your system. Common choices:
+- **g++** (part of MinGW on Windows or pre-installed on Linux/macOS)
+- A terminal (Command Prompt, PowerShell, or Linux shell)
+- **Git** (optional, for cloning the repository)
 
-First, the admin needs to add a train so users have something to book.
+### 🔧 Installation & Setup
 
-1.  Run the application: `railway_system.exe`
-2.  From the main menu, select option `3. Admin Login`.
-3.  Enter the credentials:
-    * Username: `admin`
-    * Password: `admin123`
-4.  In the Admin Menu, select `1. Add New Train`.
-5.  Enter the train details:
-    * Train Number: `12345`
-    * Train Name: `Capital Express`
-    * Source: `Delhi`
-    * Destination: `Mumbai`
-    * Total Seats: `100`
-6.  The train is now added. You can select `0. Logout` to return to the main menu.
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/your-username/railway-system.git
+   ```
 
-### ### Step 2: User - Register and Book a Ticket
+2. **Navigate to the Project Directory**
+   ```sh
+   cd railway-system
+   ```
 
-Now, a new user will register, search for the train, and book a ticket.
+3. **Compile the Source Code**
+   Use the `g++` compiler to compile the `.cpp` files into an executable:
+   ```sh
+   g++ main.cpp User.cpp Train.cpp Ticket.cpp -o railway_system.exe
+   ```
 
-1.  From the main menu, select option `2. Register`.
-2.  Enter new user credentials:
-    * Username: `aisha`
-    * Password: `mypassword`
-3.  After successful registration, select `1. Login` from the main menu and log in as `aisha`.
-4.  You are now in the User Menu. Select `1. Search Trains & Book Ticket`.
-5.  Enter the route you want to search for:
-    * Source: `Delhi`
-    * Destination: `Mumbai`
-6.  The system will display the "Capital Express" with 100 available seats. When prompted to book, enter `y`.
-7.  Enter the train number `12345`.
-8.  Enter your passenger details.
-9.  ✅ **Success!** The system will confirm your booking and provide a **unique PNR number**. Make sure to note it down.
+4. **Run the Application**
+   ```sh
+   railway_system.exe
+   ```
 
-### ### Step 3: User - View and Cancel a Ticket
+---
 
-Finally, the user checks her booking and then cancels it.
+## 🚀 Usage Guide & Example Walkthrough
 
-1.  In the User Menu, select `2. View My Bookings`. You will see the ticket you just booked.
-2.  To cancel, select `3. Cancel Ticket`.
-3.  Enter the PNR number you noted down earlier.
-4.  ✅ **Success!** The system will confirm the cancellation.
-5.  If you check `2. View My Bookings` again, it will be empty. If you search for the `Delhi` to `Mumbai` train, the available seats will be back to `100`.
+Here’s a complete example of using the application:
 
-You have now successfully tested the core functionalities of the Railway Reservation System!
+### 🔹 Step 1: Admin Adds a Train
+1. Run the app: `railway_system.exe`
+2. Select `3. Admin Login`
+3. Enter credentials:
+   - Username: `admin`
+   - Password: `admin123`
+4. Select `1. Add New Train`
+5. Enter train details:
+   - Train Number: `12345`
+   - Train Name: `Capital Express`
+   - Source: `Delhi`
+   - Destination: `Mumbai`
+   - Total Seats: `100`
+6. Train successfully added ✅
+
+---
+
+### 🔹 Step 2: User Registers & Books a Ticket
+1. From main menu, select `2. Register`
+2. Enter credentials:
+   - Username: `aisha`
+   - Password: `mypassword`
+3. Log in with option `1. Login`
+4. From User Menu, select `1. Search Trains & Book Ticket`
+5. Enter route:
+   - Source: `Delhi`
+   - Destination: `Mumbai`
+6. System shows available trains. Confirm booking.
+7. Enter train number `12345` and passenger details.
+8. ✅ Booking confirmed with a unique **PNR number**
+
+---
+
+### 🔹 Step 3: User Views & Cancels a Ticket
+1. From User Menu, select `2. View My Bookings`
+2. See booked ticket(s).
+3. Select `3. Cancel Ticket`
+4. Enter your PNR number.
+5. ✅ Ticket successfully cancelled.
+6. Train seat availability restored.
+
+---
+
+## 📂 Project Structure
+```
+railway-system/
+├── main.cpp        # Main program logic
+├── User.cpp        # User management (registration, login, bookings)
+├── Train.cpp       # Train management (add/search trains)
+├── Ticket.cpp      # Ticket booking and cancellation
+├── utils.h         # Utility functions
+├── User.h          # User class declaration
+├── Train.h         # Train class declaration
+├── Ticket.h        # Ticket class declaration
+├── README.md       # Documentation
+```
+
+---
+
+## 🏆 Conclusion
+
+This **Railway Ticket Reservation System** demonstrates:
+- Practical use of **OOP concepts** in C++
+- **File handling** for persistent storage
+- A clean and modular code structure
+- Realistic simulation of user and admin workflows
+
+🚂 All core functionalities have been successfully implemented and tested!
