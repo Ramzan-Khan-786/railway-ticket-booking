@@ -1,22 +1,21 @@
 #include "Train.h"
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include "utils.h"
 using namespace std;
+
 void Train::addTrain() {
     clearScreen();
-    cout << "\n\t\t\t=============================================";
-    cout << "\n\t\t\t\t        Add New Train";
-    cout << "\n\t\t\t=============================================";
-    cout << "\n\n\t\t\tEnter Train Number: ";
+    cout << "\n==== Add New Train ====\n";
+    cout << "Enter Train Number: ";
     cin >> trainNumber;
-    cout << "\t\t\tEnter Train Name: ";
+    cout << "Enter Train Name: ";
     cin.ignore();
     cin.getline(trainName, 50);
-    cout << "\t\t\tEnter Source: ";
+    cout << "Enter Source: ";
     cin.getline(source, 50);
-    cout << "\t\t\tEnter Destination: ";
+    cout << "Enter Destination: ";
     cin.getline(destination, 50);
-    cout << "\t\t\tEnter Total Seats: ";
+    cout << "Enter Total Seats: ";
     cin >> totalSeats;
     availableSeats = totalSeats;
 
@@ -24,51 +23,56 @@ void Train::addTrain() {
     outFile.write(reinterpret_cast<char*>(this), sizeof(Train));
     outFile.close();
 
-    cout << "\n\t\t\tTrain added successfully!" << endl;
+    cout << "\nTrain added successfully!\n";
 }
 
 void Train::displayTrainDetails() {
-    cout << left << setw(20) << trainNumber
-              << setw(20) << trainName
-              << setw(20) << source
-              << setw(20) << destination
-              << setw(10) << availableSeats << endl;
+    cout << left << setw(15) << trainNumber
+         << setw(20) << trainName
+         << setw(15) << source
+         << setw(15) << destination
+         << setw(10) << availableSeats << endl;
+}
+
+void Train::viewAllTrains() {
+    ifstream inFile("trains.dat", ios::binary);
+    if (!inFile) {
+        cout << "\nNo trains available.\n";
+        return;
+    }
+    cout << "\n==== All Trains ====\n";
+    cout << left << setw(15) << "Train No"
+         << setw(20) << "Train Name"
+         << setw(15) << "Source"
+         << setw(15) << "Destination"
+         << setw(10) << "Seats Avl" << endl;
+
+    while(inFile.read(reinterpret_cast<char*>(this), sizeof(Train))) {
+        displayTrainDetails();
+    }
+    inFile.close();
 }
 
 void Train::searchTrain(const char* src, const char* dest) {
     ifstream inFile("trains.dat", ios::binary);
     bool found = false;
-
-    clearScreen();
-    cout << "\n\t\t\t=====================================================================================================";
-    cout << "\n\t\t\t\t\t\t      Available Trains";
-    cout << "\n\t\t\t=====================================================================================================";
-    cout << "\n\t\t\t" << left << setw(20) << "Train No."
-              << setw(20) << "Train Name"
-              << setw(20) << "Source"
-              << setw(20) << "Destination"
-              << setw(10) << "Seats Avl." << endl;
-    cout << "\t\t\t-----------------------------------------------------------------------------------------------------\n";
-
+    if (!inFile) {
+        cout << "\nNo trains available.\n";
+        return;
+    }
+    cout << "\n==== Search Results ====\n";
     while(inFile.read(reinterpret_cast<char*>(this), sizeof(Train))) {
         if (strcasecmp(source, src) == 0 && strcasecmp(destination, dest) == 0) {
-            cout << "\t\t\t";
             displayTrainDetails();
             found = true;
         }
     }
-
-    if (!found) {
-        cout << "\n\n\t\t\tNo trains found for the specified route." << endl;
-    }
+    if (!found) cout << "\nNo trains found.\n";
     inFile.close();
 }
 
-
 void Train::bookSeats(int numSeats) {
-    if (numSeats > 0 && availableSeats >= numSeats) {
-        availableSeats -= numSeats;
-    }
+    if (availableSeats >= numSeats) availableSeats -= numSeats;
 }
 
 void Train::cancelSeats(int numSeats) {

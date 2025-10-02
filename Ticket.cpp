@@ -1,7 +1,7 @@
+#include<bits/stdc++.h>
 #include "Ticket.h"
 #include "Train.h"
 #include "utils.h"
-#include<bits/stdc++.h>
 using namespace std;
 void Ticket::createTicket(const string& user, const string& trnNo) {
     srand(time(0));

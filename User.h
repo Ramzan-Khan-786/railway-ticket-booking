@@ -14,4 +14,4 @@ public:
     std::string getUsername();
 };
 
-#endif // USER_H
+#endif

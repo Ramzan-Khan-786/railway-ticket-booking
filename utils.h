@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+using namespace std;
 
 inline void clearScreen() {
 #ifdef _WIN32
@@ -12,4 +13,10 @@ inline void clearScreen() {
 #endif
 }
 
-#endif // UTILS_H
+inline void pauseScreen() {
+    cout << "\nPress Enter to continue...";
+    cin.ignore();
+    cin.get();
+}
+
+#endif

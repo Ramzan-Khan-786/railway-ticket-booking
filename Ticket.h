@@ -21,4 +21,4 @@ public:
     const char* getBookingUser() const;
 };
 
-#endif // TICKET_H
+#endif
